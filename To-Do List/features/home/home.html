@@ -1,0 +1,14 @@
+<div class="content">
+        <input type="text" placeholder="Search for the To-do list" ng-model="search">
+        <!-- <button ng-click="order='name'">By Name</button>
+        <button ng-click="order='!popularity'">By Popularity</button> -->
+        <ul>
+            <li ng-repeat="todo in todos | orderBy:order|filter:search"  ng-init="hover = false" 
+            ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+                {{todo.name}}  {{todo.urgency}}
+                <div class="remove" ng-click="removeTodo(todo)" ng-show="hover">x</div>
+                <a class = "update" href="/#!/update" ng-show="hover">v</div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="content">
+    <form ng-submit="addTodo()">
+        <input type="text" placeholder="To-Do Task" ng-model="newtodo.name">
+        <input type="text" placeholder="Urgency" ng-model="newtodo.urgency">
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+
+    <ul>
+        <li ng-repeat="todo in todos | orderBy:order|filter:search" ng-mouseEnter="hover = true" ng-mouseLeave="hover=false">
+            {{todo.name}}  {{todo.urgency}}
+            <div class="remove" ng-click="removeTodo(todo)" ng-show="hover">x</div>
+        </li>
+    </ul>
+</div>
